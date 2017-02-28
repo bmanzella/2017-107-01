@@ -15,16 +15,18 @@ body, html {
 header {
   height: 300px;
   background-color: rgb(79, 79, 79);
-  background-image: url(/Users/stephen.raghunath/Desktop/bg.png);
+  background-image: url(https://www.ready.gov/sites/default/files/Build%20A%20Team%204.4.2.0.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
+
 h1 {
-  color: rgb(204, 165, 10);
+  color: white;
   text-align: center;
   font-size: 72px;
   line-height: 300px;
+  text-shadow: 0 0 4px #444;
 }
 
 aside {
@@ -115,47 +117,42 @@ a:hover {
   float: right;
 }
 
-
-#staff-table {
+.card {
+  background-color: #fff;
   width: 80%;
   margin-left: 10%;
+  margin-right: 10%;
+  box-sizing: border-box;
+  padding: 16px;
+  border-radius: 24px;
+}
+
+#staff-table {
+  width: 100%;
   font-family: sans-serif;
+  text-align: center;
   border-collapse: collapse;
+}
+
+#staff-table img {
+  width: 100px;
 }
 
 #staff-table th {
   background-color: black;
   color: white;
-  font-weight: bold;
   font-size: 24px;
-  padding: 16px;
+  padding: 10px;
 }
 
 #staff-table td {
-  border: 1px solid #222;
-  text-align: center;
-  padding: 8px;
+  outline: solid 1px black;
 }
 
 #staff-table tr {
-  transition: all 1s linear;
+  transition: background-color 1s linear;
 }
 
 #staff-table tr:hover {
-  background-color: blue;
-}
-
-#staff-table td img {
-  width: 100px;
-}
-
-.card {
-  background-color: #fff;
-  color: black;
-  box-sizing: border-box;
-  padding: 16px;
-  border-radius: 8px;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
+  background-color: purple;
 }

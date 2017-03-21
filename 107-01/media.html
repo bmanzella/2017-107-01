@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Media</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- custom styles -->
+    <link rel="stylesheet" href="media.css">
+
+    <!-- load our js file -->
+    <script src="media.js"></script>
+  </head>
+  <body>
+
+    <section class="container">
+
+      <section id="feature-video">
+        <video width="100%" controls="controls">
+          <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4">
+        </video>
+      </section>
+
+      <div class="row">
+        <aside id="albums" class="col-sm-3">
+          <img src="http://tasteofcountry.com/wp-content/blogs.dir/204/files/2015/08/Some-Hearts.jpg" class="img-responsive">
+          <img src="http://tasteofcountry.com/wp-content/blogs.dir/204/files/2015/08/Some-Hearts.jpg" class="img-responsive">
+          <img src="http://tasteofcountry.com/wp-content/blogs.dir/204/files/2015/08/Some-Hearts.jpg" class="img-responsive">
+        </aside>
+
+        <section id="songs"class="col-sm-7">
+          <div id="banner">
+            <img src="http://www.f-covers.com/cover/gold-music-facebook-cover-timeline-banner-for-fb.jpg" class="img-responsive">
+          </div>
+
+          <table class="table table-striped">
+            <tr>
+              <td>1</td>
+              <td>Rockabye</td>
+              <td>Seana Paul, and somebody else</td>
+              <td><button onclick="playSong1()" class="btn btn-success"><i class="glyphicon glyphicon-play"></i></button></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Standing Outside the Fire</td>
+              <td>Garth Brooks</td>
+              <td><button onclick="playSong2()" class="btn btn-success"><i class="glyphicon glyphicon-play"></i></button></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Killing me Softly</td>
+              <td>Lauryn Hill</td>
+              <td><button onclick="playSong3()" class="btn btn-success"><i class="glyphicon glyphicon-play"></i></button></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Cinema</td>
+              <td>Skrillex</td>
+              <td><button onclick="playSong4()" class="btn btn-success"><i class="glyphicon glyphicon-play"></i></button></td>
+            </tr>
+          </table>
+        </section>
+
+        <aside id="quick-links" class="col-sm-2">
+          <h4>Top Picks</h4>
+          <ul>
+            <li>Pick 1</li>
+            <li>Pick 2</li>
+            <li>Pick 3</li>
+          </ul>
+
+          <h4>Recently Played</h4>
+          <ul>
+            <li>Pick 1</li>
+            <li>Pick 2</li>
+            <li>Pick 3</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </body>
+</html>

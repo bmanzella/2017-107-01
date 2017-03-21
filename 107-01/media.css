@@ -1,0 +1,25 @@
+/* media.css */
+
+body, html {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8d02ce+0,45484d+100,510296+100&1+0,0.97+100 */
+  background: -moz-linear-gradient(top, rgba(141,2,206,1) 0%, rgba(81,2,150,0.97) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(141,2,206,1) 0%,rgba(81,2,150,0.97) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(141,2,206,1) 0%,rgba(81,2,150,0.97) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8d02ce', endColorstr='#f7510296',GradientType=0 ); /* IE6-9 */
+}
+
+.container {
+  max-width: 800px;
+  margin-top: 24px;
+  background-color: white;
+  box-shadow: black 0 0 40px;
+  padding: 0;
+}
+
+#albums {
+  padding-right: 0;
+}
+
+#songs {
+  padding: 0;
+}

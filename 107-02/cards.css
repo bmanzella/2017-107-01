@@ -2,11 +2,13 @@
 
 .card {
   position: relative;
+  float: left;
   height: 250px;
   width: 200px;
   border: solid 1px blue;
   border-radius: 30px;
   overflow: hidden;
+  margin: 5px;
 }
 
 .back, .face {

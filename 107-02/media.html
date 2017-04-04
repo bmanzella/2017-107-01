@@ -11,10 +11,9 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <!-- custom styles -->
+    <!-- link in our CSS -->
     <link rel="stylesheet" href="media.css">
 
-    <!-- load our js file -->
     <script src="media.js"></script>
   </head>
   <body>
@@ -43,26 +42,26 @@
             <tr>
               <td>1</td>
               <td>Rockabye</td>
-              <td>Seana Paul, and somebody else</td>
-              <td><button id="play1" onclick="playSong1()" class="btn btn-success"><i class="glyphicon glyphicon-play"></i></button></td>
+              <td>Sean Paul and That lady.</td>
+              <td><button id="play1" onclick="playSeanPaul()" class="btn btn-success"><i class="glyphicon glyphicon-play"></i></button></td>
             </tr>
             <tr>
               <td>2</td>
               <td>Standing Outside the Fire</td>
               <td>Garth Brooks</td>
-              <td><button id="play2" onclick="playSong2()" class="btn btn-success"><i class="glyphicon glyphicon-play"></i></button></td>
+              <td><button id="play2" onclick="playGarthBrooks()" class="btn btn-success"><i class="glyphicon glyphicon-play"></i></button></td>
             </tr>
             <tr>
               <td>3</td>
-              <td>Killing me Softly</td>
+              <td>Killing Me Softly</td>
               <td>Lauryn Hill</td>
-              <td><button id="play3" onclick="playSong3()" class="btn btn-success"><i class="glyphicon glyphicon-play"></i></button></td>
+              <td><button id="play3" onclick="playLaurynHill()" class="btn btn-success"><i class="glyphicon glyphicon-play"></i></button></td>
             </tr>
             <tr>
               <td>4</td>
               <td>Cinema</td>
-              <td>Skrillex</td>
-              <td><button id="play4" onclick="playSong4()" class="btn btn-success"><i class="glyphicon glyphicon-play"></i></button></td>
+              <td>Stolen by Skrillex</td>
+              <td><button id="play4" onclick="playSkrillex()" class="btn btn-success"><i class="glyphicon glyphicon-play"></i></button></td>
             </tr>
           </table>
         </section>
@@ -85,18 +84,30 @@
       </div>
     </section>
 
-      <audio id="song1">
-        <source src="bensound-dubstep.mp3">
-      </audio>
-      <audio id="song2">
-        <source src="bensound-epic.mp3">
-      </audio>
-      <audio id="song3">
-        <source src="bensound-jazzyfrenchy.mp3">
-      </audio>
-      <audio id="song4">
-        <source src="bensound-retrosoul.mp3">
-      </audio>
+
+
+
+    <audio id="song1">
+      <source src="bensound-creepy.mp3">
+    </audio>
+
+    <audio id="song2">
+      <source src="bensound-epic.mp3">
+    </audio>
+
+    <audio id="song3">
+      <source src="bensound-sadday.mp3">
+    </audio>
+
+    <audio id="song4">
+      <source src="bensound-cute.mp3">
+    </audio>
+
+
+
+
+
+
 
 
   </body>

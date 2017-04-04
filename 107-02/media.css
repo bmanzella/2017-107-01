@@ -1,0 +1,40 @@
+/* media.css */
+
+body, html {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff007f+0,ffc9ca+100 */
+  background: rgb(255,0,127); /* Old browsers */
+  background: -moz-linear-gradient(-45deg, rgba(255,0,127,1) 0%, rgba(255,201,202,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, rgba(255,0,127,1) 0%,rgba(255,201,202,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, rgba(255,0,127,1) 0%,rgba(255,201,202,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff007f', endColorstr='#ffc9ca',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.container {
+  max-width: 800px;
+
+  padding-right: 0;
+  padding-left: 0;
+  margin-top: 48px;
+  margin-bottom: 48px;
+
+  background-color: white;
+
+  box-shadow: black 0 0 40px;
+
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+}
+
+#feature-video video {
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+}
+
+
+@media (max-width: 400px) {
+  #albums img {
+    display: block;
+    max-width: 200px;
+    margin: auto;
+  }
+}

@@ -1,0 +1,38 @@
+/* cards.css */
+
+.card {
+  position: relative;
+  height: 250px;
+  width: 200px;
+  border: solid 1px blue;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.back, .face {
+  height: 250px;
+  width: 200px;
+  text-align: center;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.back {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a90329+0,8f0222+44,6d0019+100;Brown+Red+3D */
+  background: rgb(169,3,41); /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.face {
+  z-index: 2;
+  background-color: white;
+}
+
+.back img, .face img {
+  width: 100px;
+  height: 100px;
+  margin-top: 75px;
+}

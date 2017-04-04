@@ -1,0 +1,52 @@
+<!-- cards.html -->
+<html>
+  <head>
+    <title>Card Game</title>
+    <link rel="stylesheet" href="cards.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+  </head>
+
+  <body>
+
+    <h1>Time left: 30 seconds</h1>
+
+    <div class="card" onclick="flip(this)">
+      <div class="back">
+        <img src="http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/chat-2-icon.png">
+      </div>
+      <div class="face">
+        <img src="https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png">
+      </div>
+    </div>
+
+    <script>
+
+    // by default, flip the front over
+    TweenMax.set(
+      document.querySelector('.face'),
+      {rotationY: 180}
+    );
+
+    // Start the timer
+    var secondsLeft = 30;
+    var timer = setInterval(() => {
+      secondsLeft = secondsLeft - 1;
+      var h1 = document.querySelector('h1');
+      h1.innerHTML = 'Time left: ' + secondsLeft + ' seconds';
+    }, 1000);
+
+
+    function flip(card) {
+      // (card) = a variable of the card html
+      // we don't need var card = document.query......
+
+      // flip it
+      var face = card.children[1];
+      TweenMax.to(card, 0.5, { rotationY: 180});
+      TweenMax.to(face, 0.5, {rotationY: 0});
+    }
+
+    </script>
+
+  </body>
+</html>

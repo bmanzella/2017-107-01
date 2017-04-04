@@ -1,0 +1,79 @@
+<!-- cards.html -->
+<!-- A card matching game, where I flip 2 cards
+- If they match, I get points
+- If they dont, I lose points
+
+- The faster I play, the more points I get
+- I only have 30 seconds to play
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Card Game</title>
+  <link rel="stylesheet" href="card.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+</head>
+<body>
+
+  <h1>Time Left: 30 Seconds</h1>
+<div class="container">
+  <div class="card" onclick="flipCard(this)">
+    <div class="back">
+      <img src="http://www.clipartkid.com/images/750/group-people-icon-clipart-PoxHR0-clipart.jpeg">
+    </div>
+    <div class="front">
+      <img src="https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png">
+    </div>
+  </div>
+</div>
+  <script>
+
+    // by default, make sure the front is flipped
+    TweenMax.set(
+      document.querySelector('.front'),
+      {rotationY: 180}
+    );
+
+
+
+    function flipCard(card) {
+      // (card) = a variable that is passed in
+      // no need to: var card = document.query...etc
+      var front = card.children[1];
+      TweenMax.to(card, 0.5, {
+        rotationY: 180
+      });
+      TweenMax.to(front, 0.5, {rotationY: 0});
+
+      startGame();
+    }
+
+    // OUTSIDE ALL FUNCTIONS
+    var secondsLeft = 30;
+
+    function startGame() {
+      setInterval(function(){
+        // set interval runs code every
+        // x milliseconds
+        secondsLeft = secondsLeft - 1;
+        var h1 = document.querySelector('h1');
+        h1.innerHTML = 'Time Left: ' + secondsLeft + ' Seconds';
+
+        if(secondsLeft == 0) {
+          alert('Game Over!');
+        }
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+.

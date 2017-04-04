@@ -1,0 +1,112 @@
+<!-- Animation.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animation</title>
+  <!-- add gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+
+  <!-- Style the objects -->
+  <style>
+  .box1 {
+    height: 100px;
+    width: 100px;
+    background-color: black;
+  }
+  .box2 {
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+  }
+  nav a {
+    /*display: inline-block;*/
+    width: 100px;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    padding: 5px 20px;
+  }
+  </style>
+</head>
+<body>
+  <!-- make the objects to animate -->
+  <nav>
+    <a href="#" onmouseover="onLinkHover()" onmouseout="onLinkOut()">Some Link</a>
+  </nav>
+  <div class="box1"></div>
+  <div class="box2"></div>
+
+  <script>
+  // this is a JS comment
+  // GSAP, specifically TweenMax.js, gives us a TweenMax Object
+  // TweenMax.to(what, howLong, animateTo);
+  // what = an html element
+  // howLong = number/decimal of seconds, ex: 2.5
+  // animateTo = object of CSS properties
+  var box1 = document.querySelector('.box1');
+  TweenMax.to(box1, 3, {
+    backgroundColor: 'red',
+    x: '100',
+    y: '200',
+    height: '150px',
+    width: '150px',
+    borderRadius: '150px',
+    repeat: 3,
+    rotation: 360,
+    rotationY: 180
+  });
+
+  // TweenMax.from(what, howLong, animateFrom);
+  var box2 = document.querySelector('.box2');
+  TweenMax.from(box2, 3, {
+    backgroundColor: 'pink',
+    y: 1000,
+    x: 500,
+    borderRadius: '150px',
+    height: '150px',
+    width: '150px',
+    opacity: 0,
+    yoyo: true,
+    repeat: 1
+  });
+
+
+  function onLinkHover() {
+    var link = document.querySelector('nav a');
+    TweenMax.to(link, 0.5, {
+      backgroundColor: 'yellow',
+      color: 'orange',
+      borderRadius: '20px',
+      rotationY: 180
+    });
+  }
+  function onLinkOut() {
+    var link = document.querySelector('nav a');
+    TweenMax.to(link, 0.5, {
+      backgroundColor: 'blue',
+      color: 'white',
+      borderRadius: '0px',
+      rotationY: 0
+    });
+  }
+
+
+
+
+
+
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

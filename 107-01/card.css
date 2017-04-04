@@ -1,0 +1,47 @@
+/* card.css */
+
+.container {
+  perspective: 1000px;
+}
+.card {
+  width: 200px;
+  height: 250px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.front {
+ background-color: white;
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 200px;
+ height: 250px;
+ backface-visibility: hidden;
+ z-index: 2;
+}
+.back {
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 250px;
+  backface-visibility: hidden;
+}
+.front img, .back img {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  margin-top: 75px;
+}
+
+
+
+
+
+
+.

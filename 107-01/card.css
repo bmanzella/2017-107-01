@@ -42,6 +42,17 @@
   margin-top: 75px;
 }
 
+h2 {
+  position: absolute;
+  top: 12px;
+  right: 24px;
+}
+
+.front img {
+  /*transform: rotateY(180deg);
+  backface-visibility: visible;*/
+}
+
 
 
 

@@ -1,0 +1,133 @@
+/* global stylesheet for all pages */
+
+@import url('https://fonts.googleapis.com/css?family=Rajdhani');
+body {
+    background: linear-gradient(231deg, #1bb48d, #82bdfc);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+    margin: 0;
+    padding: 0;
+}
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 90% 0%
+    }
+    50% {
+        background-position: 11% 100%
+    }
+    100% {
+        background-position: 90% 0%
+    }
+}
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 90% 0%
+    }
+    50% {
+        background-position: 11% 100%
+    }
+    100% {
+        background-position: 90% 0%
+    }
+}
+@keyframes AnimationName {
+    0% {
+        background-position: 90% 0%
+    }
+    50% {
+        background-position: 11% 100%
+    }
+    100% {
+        background-position: 90% 0%
+    }
+}
+h1, h2 {
+    font-family: 'Rajdhani', sans-serif;
+    text-align: center;
+    text-shadow: 1px 1px 5px black;
+}
+
+.card {
+    width: 400px;
+    margin: 40px auto;
+    background-color: #fff;
+    box-shadow: 0 0 5px black;
+    border-radius: 10px;
+    min-height: 300px;
+}
+
+a#signup {
+    display: block;
+    height: 200px;
+    width: 150px;
+    background-color: rgb(156, 235, 124);
+    text-align: center;
+    line-height: 200px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 25px;
+    text-decoration: none;
+    border-radius: 400px;
+    box-shadow: 0 0 5px black;
+    transition: all 0.5s ease-out;
+}
+
+a#signin {
+    display: block;
+    height: 200px;
+    width: 150px;
+    background-color: rgb(187, 187, 187);
+    text-align: center;
+    line-height: 200px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 50px;
+    text-decoration: none;
+    border-radius: 400px;
+    box-shadow: 0 0 5px black;
+    transition: all 0.5s ease-out;
+}
+
+a#signin:visited, a#signup:visited {
+    color: black;
+}
+
+a#signin:hover, a#signup:hover {
+    transform: rotate(15deg);
+}
+
+form#signup {
+    width: 500px;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 24px;
+    background-color: #fff;
+    height: 200px;
+}
+
+form#signup label {
+    display: block;
+    float: left;
+    width: 28%;
+    text-align: right;
+    margin-right: 2%;
+}
+
+form#signup input {
+    display: block;
+    float: left;
+    width: 70%;
+}
+
+form#signup #register {
+    float: right;
+    background-color: rgb(8, 193, 176);
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.

@@ -7,7 +7,8 @@ session_start(); // check/open the session
 if(isset($_SESSION['userId']) == false) {
   header('Location: sign-in.php');
 }
-
+require 'db.php';
+$db = new DB();
 $postTitle = 'Default Title';
 $postImg = 'no-image.png';
 $postContent = 'Default content here.';
@@ -17,26 +18,36 @@ $formAction = 'insert-post.php';
 if(isset($_GET['update'])) {
   $postId = $_GET['update'];
 
-  // make a connection
-  $server = 'fred-dev.caokxintrssz.us-east-1.rds.amazonaws.com';
-  $user = 'laonaumc_fred';
-  $pw = 'fredonia-rocks';
-  $conn = new mysqli(
-    $server, $user, $pw, 'laonaumc_wpdb'
-  );
-
-  if ($conn->connect_error) {
-    die('connection failed: ' . $conn->connect_error);
-  }
   // get the info from db for that $postId
-  $result = $conn->query("SELECT * FROM posts WHERE id = $postId");
-  $post = $result->fetch_assoc();
-  // update $postTitle, $postImg, $postContent
-  // with the values from db
-  $postTitle = $post['title'];
-  $postImg = $post['img'];
-  $postContent = $post['content'];
+  $prepare = $statement = $db->conn->prepare("SELECT * FROM posts WHERE id = ?");
+  $bind = $statement->bind_param("i", $postId);
+  $execute = $statement->execute();
+  $bindResult = $statement->bind_result($postId, $postTitle, $postContent, $postImg, $postUserId);
+  $fetch = $statement->fetch();
+  $statement->free_result(); // needed to run multipe queries
   $formAction = 'update-post.php';
+
+  // get all tags associate with this post NOTE: injection safe
+  $existingTagResult = $db->query("SELECT tag_id from posts_tags where post_id = $postId");
+  $existingTagIds = [];
+  while($row = $existingTagResult->fetch_assoc()) {
+    $existingTagIds[] = $row['tag_id'];
+  }
+}
+
+// get all tags
+$tagResult = $db->query('SELECT * FROM tags');
+$tags = [];
+while($row = $tagResult->fetch_assoc()) {
+  $row['checked'] = ''; // default, not checked
+
+  //Look to see if we should check it from the existing tag ids
+  foreach ($existingTagIds as $tagId) {
+    if($row['id'] == $tagId) {
+      $row['checked'] = 'checked';
+    }
+  }
+  $tags[] = $row;
 }
 
  ?>
@@ -52,5 +63,18 @@ if(isset($_GET['update'])) {
    <textarea id="content" name="content"><?php echo $postContent ?></textarea>
    <br>
    <input type="hidden" name="id" value="<?php echo $postId ?>">
+
+   <h3>Tags</h3>
+   <?php foreach($tags as $tag) { ?>
+     <label for="<?php echo $tag['name'] ?>"><?php echo $tag['name'] ?></label>
+     <input type="checkbox" <?php echo $tag['checked'] ?> name="<?php echo $tag['name'] ?>" value="<?php echo $tag['id'] ?>">
+   <?php } ?>
+   <!-- <label for="news">News</label>
+   <input type="checkbox" name="news" value="1">
+   <label for="music">Music</label>
+   <input type="checkbox" name="music" value="3">
+   <label for="tech">Tech</label>
+   <input type="checkbox" name="tech" value="5"> -->
+   <hr>
    <button>Save</button>
  </form>

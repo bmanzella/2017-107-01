@@ -39,6 +39,8 @@ $connection->close();
 
  ?>
 
+ <?php include "notification.php" ?>
+
  <h1>Posts</h1>
  <h2>Welcome <?php echo $_SESSION['useraka'] ?>!</h2>
  <a href="./"><< Back</a>

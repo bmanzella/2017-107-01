@@ -1,5 +1,5 @@
 <?php
-
+// db.php
 class DB {
 
   public $conn;
@@ -22,7 +22,7 @@ class DB {
     if($result) {
       return $result;
     } else {
-      die('Query error: ' . $this->conn->error);
+      die('Query error: ' . $this->conn->error . 'query was ' . $sql);
     }
   }
 
@@ -47,8 +47,8 @@ class DB {
     $sql = $this->conn->prepare(
       "SELECT p.*, GROUP_CONCAT(t.name) as tags
         FROM posts p
-        JOIN posts_tags pt ON pt.post_id = p.id
-        JOIN tags t ON t.id = pt.tag_id
+        LEFT JOIN posts_tags pt ON pt.post_id = p.id
+        LEFT JOIN tags t ON t.id = pt.tag_id
         WHERE p.id = ?
         GROUP BY p.id"
     );
@@ -95,7 +95,27 @@ class DB {
   }
 
 
+  public function associateTagWithPost($tagId, $postId) {
+    // Prepare
+    $statement = $this->conn->prepare(
+      "INSERT INTO posts_tags (post_id, tag_id) VALUES (?, ?)"
+    );
 
+    // check for sql error
+    if(!$statement) die("Prepare failed: " . $this->conn->error);
+
+    // Bind
+    $bind = $statement->bind_param('ii', $postId, $tagId);
+
+    // check for bind error
+    if(!$bind) die("Bind failed: " . $statement->error);
+
+    // execute
+    $execute = $statement->execute();
+
+    // check for execute error
+    if(!$execute) die("Execute failed: " . $statement->error);
+  }
 
 
 

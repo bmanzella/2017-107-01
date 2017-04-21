@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dropdown Menu</title>
+  <style>
+  body {
+    margin: 0;
+  }
+  #navbar {
+    height: 50px;
+    background-color: rgb(37, 152, 226);
+    /* Make it stick to the top */
+    position: fixed;
+    top:0;
+    width: 100%;
+  }
+  #header {
+    height: 400px;
+    background-color: black;
+  }
+  #content {
+    height: 800px;
+    background-color: white;
+    border-top: solid 5px rgb(37, 152, 226);
+  }
+  #footer {
+    height: 200px;
+    background-color: #404040;
+    border-top: solid 5px rgb(37, 152, 226);
+  }
+
+  #navbar ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  #navbar > ul > li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 50px;
+  }
+
+  #navbar > ul > li:hover {
+    background-color: rgb(21, 94, 219);
+  }
+
+  #navbar > ul > li > a {
+    color: white;
+    text-decoration: none;
+  }
+
+  #navbar ul ul li {
+    background-color: white;
+  }
+
+  #navbar ul ul li:hover {
+    background-color: rgb(37, 152, 226);
+  }
+
+  #navbar ul ul li a {
+    color: rgb(37, 152, 226);
+    text-decoration: none;
+  }
+
+  #navbar ul ul li:hover a {
+    color: white;
+  }
+
+  #navbar ul ul {
+    height: 0;
+    transition: all .3s ease-out;
+    opacity: 0;
+    overflow-x: hidden;
+  }
+
+  #navbar > ul > li:hover ul {
+    height: 250px;
+    opacity: 1;
+  }
+
+  #navbar li {
+    transition: all .3s ease-out;
+  }
+/*
+  #navbar ul ul ul {
+    position: absolute;
+    top: -50px;
+    left: 100%;
+  }*/
+
+
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="">News</a></li>
+      <li>
+        <a href="">Shows</a>
+        <ul>
+          <li><a href="">Survivor</a></li>
+          <li><a href="">Amazing Race</a></li>
+          <li><a href="">Desparate Housewives</a></li>
+          <li>
+            <a href="">Cory In The House</a>
+            <!-- <ul>
+              <li><a href="">Cory</a></li>
+              <li><a href="">Chef Backster</a></li>
+              <li><a href="">POTUS</a></li>
+            </ul> -->
+          </li>
+          <li><a href="">Fear Factor</a></li>
+        </ul>
+      </li>
+      <li><a href="">Contact Us</a></li>
+    </ul>
+  </nav>
+  <header id="header"></header>
+  <section id="content"></section>
+  <footer id="footer"></footer>
+</body>
+</html>

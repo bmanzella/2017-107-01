@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Menu</title>
+  </head>
+  <body>
+    <style media="screen">
+      body {
+        padding: 0;
+        margin: 0;
+      }
+
+      #feature {
+        background-color: black;
+        height: 400px;
+      }
+      #content {
+        background-color: white;
+        height: 800px;
+        border-top: solid 5px #4286f4;
+      }
+      #footer {
+        background-color: #eee;
+        border-top: solid 5px #4286f4;
+        height: 200px;
+      }
+
+      /* Nav bar styles */
+      #navbar {
+        background-color: #4286f4;
+        height: 50px;
+        z-index: 3;
+        /* make it stick to the top */
+        position: fixed;
+        width: 100%;
+        top: 0;
+      }
+
+      #navbar ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      /*only the first ul, and it's li tags*/
+      #navbar > ul > li {
+        float: left;
+        width: 25%;
+        text-align: center;
+        line-height: 50px;
+        transition: all 1s linear;
+      }
+      #navbar > ul > li > a {
+        color:white;
+        text-decoration: none;
+      }
+
+      #navbar ul ul {
+        /*display: none;*/
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all .3s linear;
+        z-index: 2;
+      }
+
+      #navbar > ul > li:hover ul {
+        /*display: block;*/
+        height: 150px;
+        opacity: 1;
+      }
+
+      #navbar ul ul li {
+        background-color: white;
+        transition: all 1s linear;
+      }
+
+      #navbar ul ul li a {
+        color:#4286f4;
+        text-decoration: none;
+      }
+
+      #navbar > ul > li > a:hover {
+        color: purple;
+      }
+
+      #navbar ul ul li:hover {
+        background-color: #4286f4
+      }
+
+      #navbar ul ul li:hover a {
+        color: white;
+      }
+    </style>
+    <nav id="navbar">
+      <ul class="outer">
+        <li class="outer-item"><a href="#">News</a></li>
+        <li><a href="#">Games</a></li>
+        <li>
+          <a href="#">Shows</a>
+          <ul class="inner">
+            <li><a href="#">Show 1</a></li>
+            <li><a href="#">Show 2</a></li>
+            <li><a href="#">Show 3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <header id="feature"></header>
+    <section id="content"></section>
+    <footer id="footer"></footer>
+
+  </body>
+</html>
